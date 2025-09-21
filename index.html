@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SportsMatch · 생활체육 강사 매칭</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#">Sports<span>Match</span></a>
+        <nav class="nav">
+          <a href="#instructors">강사찾기</a>
+          <a href="#booking">예약</a>
+          <a href="#reviews">후기</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container hero-content">
+          <h1>당신의 운동 파트너를 찾아보세요</h1>
+          <p>연결하고, 함께 운동하세요</p>
+          <form
+            class="search-form"
+            onsubmit="event.preventDefault(); alert('검색 예시입니다.');"
+          >
+            <div class="search-field">
+              <label>종목</label>
+              <select>
+                <option>농구</option>
+                <option>축구</option>
+                <option>배구</option>
+                <option>야구</option>
+                <option>테니스</option>
+                <option>배드민턴</option>
+              </select>
+            </div>
+            <div class="search-field">
+              <label>지역</label>
+              <select>
+                <option>서울 강남구</option>
+                <option>서울 마포구</option>
+                <option>서울 송파구</option>
+                <option>경기 성남시</option>
+                <option>경기 수원시</option>
+              </select>
+            </div>
+            <div class="search-field">
+              <label>날짜</label>
+              <input type="date" />
+            </div>
+            <button type="submit" class="search-btn">검색</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="container">
+          <h2>주요 기능</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🏀</div>
+              <h3>다양한 종목</h3>
+              <p>농구, 축구, 배구 등 다양한 스포츠</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📍</div>
+              <h3>근처 친구들</h3>
+              <p>가까운 지역의 운동 파트너 찾기</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💬</div>
+              <h3>소통과 채팅</h3>
+              <p>운동 후기와 경험 공유</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📱</div>
+              <h3>언제 어디서나</h3>
+              <p>모바일로 간편하게 예약하고 관리</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="instructors" class="section container">
+        <div class="section-head">
+          <h2>추천 강사</h2>
+          <p class="muted">실력과 후기가 검증된 생활체육 코치</p>
+        </div>
+        <div class="admin-panel">
+          <form id="addForm" class="admin-form" onsubmit="return false;">
+            <input
+              id="name"
+              type="text"
+              placeholder="이름 (예: 김민수)"
+              required
+            />
+            <input
+              id="sport"
+              type="text"
+              placeholder="종목 (예: 농구)"
+              required
+            />
+            <input
+              id="region"
+              type="text"
+              placeholder="지역 (예: 서울 강남구)"
+              required
+            />
+            <input
+              id="price"
+              type="number"
+              min="0"
+              step="1000"
+              placeholder="시간당 가격(원)"
+              required
+            />
+            <input id="image" type="url" placeholder="이미지 URL (선택)" />
+            <button id="addBtn" class="btn primary">강사 추가</button>
+          </form>
+        </div>
+        <div id="grid" class="grid"></div>
+      </section>
+
+      <section class="recommendations">
+        <div class="container">
+          <div class="recommendations-grid">
+            <div class="recommendation-section">
+              <h2>추천 매칭</h2>
+              <div class="match-cards">
+                <div class="match-card">
+                  <div class="match-avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
+                      alt="프로필"
+                    />
+                  </div>
+                  <div class="match-info">
+                    <h3>김민수</h3>
+                    <p>농구 · 10년 경력</p>
+                    <p>평점: 4.8점</p>
+                  </div>
+                  <button class="view-btn">프로필 보기</button>
+                </div>
+                <div class="match-card">
+                  <div class="match-avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=100&auto=format&fit=crop"
+                      alt="프로필"
+                    />
+                  </div>
+                  <div class="match-info">
+                    <h3>최유리</h3>
+                    <p>배구 · 8년 경력</p>
+                    <p>평점: 4.7점</p>
+                  </div>
+                  <button class="view-btn">프로필 보기</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="recommendation-section">
+              <h2>인기 게시물</h2>
+              <div class="post-cards">
+                <div class="post-card">
+                  <div class="post-avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop"
+                      alt="프로필"
+                    />
+                  </div>
+                  <div class="post-info">
+                    <h3>이도윤</h3>
+                    <p>축구 · 12년 경력</p>
+                    <p>조회수: 4,703</p>
+                  </div>
+                  <button class="read-btn">더 보기</button>
+                </div>
+                <div class="post-card">
+                  <div class="post-avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100&auto=format&fit=crop"
+                      alt="프로필"
+                    />
+                  </div>
+                  <div class="post-info">
+                    <h3>정수진</h3>
+                    <p>테니스 · 15년 경력</p>
+                    <p>조회수: 4,785</p>
+                  </div>
+                  <button class="read-btn">더 보기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-left">
+            <h3>SportsMatch</h3>
+            <p>생활체육 매칭 플랫폼</p>
+            <p>사업자등록번호: 123-45-67890</p>
+          </div>
+          <div class="footer-center">
+            <a href="#">이용약관</a>
+            <a href="#">개인정보처리방침</a>
+          </div>
+          <div class="footer-right">
+            <div class="social-links">
+              <a href="#" class="social-link">f</a>
+              <a href="#" class="social-link">📷</a>
+              <a href="#" class="social-link">💬</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const KEY = "instructors";
+      const grid = document.getElementById("grid");
+
+      function load() {
+        const raw = localStorage.getItem(KEY);
+        if (raw) return JSON.parse(raw);
+        const seed = [
+          {
+            id: crypto.randomUUID(),
+            name: "농구 코치 김민수",
+            sport: "농구",
+            region: "서울 강남구",
+            price: 50000,
+            image:
+              "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200&auto=format&fit=crop",
+            bio: "기초 드리블부터 팀 전술까지 1:1 맞춤 코칭",
+          },
+          {
+            id: crypto.randomUUID(),
+            name: "배구 코치 최유리",
+            sport: "배구",
+            region: "서울 마포구",
+            price: 60000,
+            image:
+              "https://images.unsplash.com/photo-1543324803-722d6e3f6c86?q=80&w=1200&auto=format&fit=crop",
+            bio: "서브/리시브 집중 훈련, 그룹 레슨 가능",
+          },
+          {
+            id: crypto.randomUUID(),
+            name: "축구 코치 이도윤",
+            sport: "축구",
+            region: "서울 송파구",
+            price: 55000,
+            image:
+              "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop",
+            bio: "포지션별 맞춤 코칭, 체력/기술 밸런스 향상",
+          },
+        ];
+        localStorage.setItem(KEY, JSON.stringify(seed));
+        return seed;
+      }
+
+      function save(list) {
+        localStorage.setItem(KEY, JSON.stringify(list));
+      }
+
+      function formatPrice(num) {
+        return (num || 0).toLocaleString("ko-KR") + "원/h";
+      }
+
+      function render(list) {
+        grid.innerHTML = "";
+        list.forEach((item) => {
+          const el = document.createElement("article");
+          el.className = "card";
+          el.innerHTML = `
+            <div class="thumb" style="background-image:url('${
+              item.image ||
+              "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop"
+            }');"></div>
+            <div class="body">
+              <h3>${item.name}</h3>
+              <p class="meta">${item.sport} · ${item.region}</p>
+              <p class="bio">${item.bio || ""}</p>
+              <div class="row">
+                <span class="price">${formatPrice(item.price)}</span>
+                <div>
+                  <button class="btn" data-edit="${item.id}">수정</button>
+                  <button class="btn" data-del="${item.id}">삭제</button>
+                  <button class="btn primary">예약</button>
+                </div>
+              </div>
+            </div>`;
+          grid.appendChild(el);
+        });
+      }
+
+      const list = load();
+      render(list);
+
+      document.getElementById("addBtn").addEventListener("click", () => {
+        const name = document.getElementById("name").value.trim();
+        const sport = document.getElementById("sport").value.trim();
+        const region = document.getElementById("region").value.trim();
+        const price = parseInt(document.getElementById("price").value, 10) || 0;
+        const image = document.getElementById("image").value.trim();
+        if (!name || !sport || !region)
+          return alert("이름/종목/지역은 필수입니다.");
+        list.unshift({
+          id: crypto.randomUUID(),
+          name,
+          sport,
+          region,
+          price,
+          image,
+          bio: "",
+        });
+        save(list);
+        render(list);
+        document.getElementById("addForm").reset();
+      });
+
+      grid.addEventListener("click", (e) => {
+        const delId = e.target.getAttribute("data-del");
+        const editId = e.target.getAttribute("data-edit");
+        if (delId) {
+          const idx = list.findIndex((x) => x.id === delId);
+          if (idx > -1) {
+            list.splice(idx, 1);
+            save(list);
+            render(list);
+          }
+        }
+        if (editId) {
+          const item = list.find((x) => x.id === editId);
+          if (!item) return;
+          const name = prompt("이름", item.name) ?? item.name;
+          const sport = prompt("종목", item.sport) ?? item.sport;
+          const region = prompt("지역", item.region) ?? item.region;
+          const price =
+            parseInt(prompt("시간당 가격(원)", item.price) ?? item.price, 10) ||
+            0;
+          Object.assign(item, { name, sport, region, price });
+          save(list);
+          render(list);
+        }
+      });
+    </script>
+  </body>
+</html>
